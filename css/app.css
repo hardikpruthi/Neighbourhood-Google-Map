@@ -1,0 +1,13 @@
+ html,body {
+  font-family: Arial, sans-serif;
+  height: 500px;
+  margin: 0;
+  padding: 0;
+}
+#map {
+  height: 500px;
+}
+#pano {
+  width: 200px;
+  height: 200px;
+}
