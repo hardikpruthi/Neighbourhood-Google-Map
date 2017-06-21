@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <meta name="viewport" content="width= device-width ,initial-scale=1.0">
+    <style>
+      html,
+      body {
+        font-family: Arial, sans-serif;
+        height: 500px;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 500px;
+      }
+      #pano {
+        width: 200px;
+        height: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+        <div class="row">
+            <h1>
+                <center>A Map of New york</center>
+            </h1>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+              <form>
+                Filter:
+                <input type="input" name="search" data-bind="textInput: searched">
+                <div> 
+                </div>
+              </form>    
+            <ul data-bind="foreach: list">
+                <li data-bind="text: $data.title ,click: $parent.selectedLocation"></li>
+            </ul>
+            <div class="searchComplete">
+                    <div class="text">Search places</div>
+                    <input data-bind="value: search" id="places-search" type="text" autocomplete="off">
+                    <input id="go-places" type="button" value="Search">
+            </div>
+          </div>
+          <div class="col-md-9">
+            <div id="map"></div>
+          </div>
+        </div>
+    </div>
+    <script src="js/libs/jquery-3.2.1.min.js"></script>
+    <script src="js/libs/knockout-3.4.2.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?libraries=geometry,drawing,places&key=AIzaSyD9eq0OiYM2LDLCEePM-hETgD0LuR3OV9k&callback=initMap"></script>
+    
+  </body>
+</html>
